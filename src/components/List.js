@@ -11,7 +11,8 @@ class List extends Component {
     addPerson = (event) =>{ 
         event.preventDefault() 
         this.setState({names: this.state.names.push(event.target.person.value)}) 
-        this.setState({names: this.state.names})  
+        this.setState({names: this.state.names}) 
+        console.log(document.elementFromPoint(2,2))  
     }  
 
     removePerson = (event) =>{  
@@ -39,10 +40,12 @@ class List extends Component {
 
                 <div> 
                 <p>{this.state.names.join(", ")}</p>
-                </div>   
+                </div>    
+                <div>find me</div>
             </div>   
             
-            {this.state.wheelTime ? <Wheel/> : "good" }
+            {this.state.wheelTime ? <Wheel names={this.state.names.join(", ")} /> : "good" } 
+            
             </div>
 
         )

@@ -3,7 +3,8 @@
 const Wheel = (props) =>{ 
     return( 
         <div>
-        ye its the wheel  
+        ye its the wheel   
+        {props.names}
         </div>
  )
 } 
